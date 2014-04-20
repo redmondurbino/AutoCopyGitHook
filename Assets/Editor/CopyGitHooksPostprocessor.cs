@@ -42,7 +42,7 @@ public class CopyGitHooksPostprocessor :  AssetPostprocessor
 	/// <summary>
 	/// the directory of where the pre-commit file resides.  The default location assumes it's a sibling to Assets
 	/// </summary>
-	const string precommitRelativeDirectoryPath = "..";
+	const string hookRelativeDirectoryPath = "..";
 
 	/// <summary>
 	/// Name of the hook file to copy, this must be marked as executable.
@@ -56,7 +56,7 @@ public class CopyGitHooksPostprocessor :  AssetPostprocessor
 			string [] movedFromAssetPaths)
 	{
 		// the three parameter version of Path.Combine is unavailable;
-		string hookPath = Path.Combine ( Path.Combine (Application.dataPath , precommitRelativeDirectoryPath), hookFilename);
+		string hookPath = Path.Combine ( Path.Combine (Application.dataPath , hookRelativeDirectoryPath), hookFilename);
 
 		if (File.Exists(hookPath))
 		{
